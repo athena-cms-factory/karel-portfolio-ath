@@ -6,8 +6,8 @@ export default function Footer({ data, profile, socials }) {
   const siteSettings = data?.site_settings?.[0] || data?.site_settings || {};
   const contactInfo = data?.contact?.[0] || profile || {};
   
-  const naam = siteSettings.site_name || profile?.full_name || 'Karel Decherf';
-  const email = contactInfo.email || siteSettings.email || '';
+  const naam = settings.site_name || profile?.full_name || 'Karel Decherf';
+  const email = contactInfo.email || settings.email || '';
   const locatie = contactInfo.locatie || contactInfo.location || '';
   const btw = contactInfo.btw_nummer || '';
   const linkedin = contactInfo.linkedin_url || contactInfo.linkedin || '';
@@ -23,7 +23,7 @@ export default function Footer({ data, profile, socials }) {
               <EditableText value={naam} cmsBind={{file: 'site_settings', index: 0, key: 'site_name'}} />
             </h3>
             <p className="text-lg leading-relaxed font-light">
-              <EditableText value={siteSettings.tagline || 'Full Stack Developer'} cmsBind={{file: 'site_settings', index: 0, key: 'tagline'}} />
+              <EditableText value={settings.tagline || 'Full Stack Developer'} cmsBind={{file: 'site_settings', index: 0, key: 'tagline'}} />
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function Footer({ data, profile, socials }) {
                 </p>
               )}
               <p className="text-sm font-light leading-relaxed">
-                <EditableText value={siteSettings.footer_text || 'Professionele website geleverd door Athena CMS Factory.'} cmsBind={{file: 'site_settings', index: 0, key: 'footer_text'}} />
+                <EditableText value={settings.footer_text || 'Professionele website geleverd door Athena CMS Factory.'} cmsBind={{file: 'site_settings', index: 0, key: 'footer_text'}} />
               </p>
             </div>
           </div>
