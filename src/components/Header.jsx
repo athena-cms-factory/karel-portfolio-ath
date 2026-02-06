@@ -22,7 +22,7 @@ function Header({ siteSettings = {} }) {
              <EditableMedia 
                src={displayLogo} 
                cmsBind={{file: 'site_settings', index: 0, key: 'site_logo_image'}} 
-               className="w-full h-full object-cover" 
+               className="w-full h-full object-contain" 
                fallback={logoChar}
              />
           </div>
