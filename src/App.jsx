@@ -1,3 +1,4 @@
+import StyleInjector from './components/StyleInjector';
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { CartProvider } from './components/CartContext';
@@ -30,6 +31,7 @@ const AppContent = ({ data }) => {
 
   return (
     <div className="bg-[#050505] dark:bg-[#050505] text-white min-h-screen">
+      <StyleInjector siteSettings={data['site_settings']} />
       <Header siteSettings={data.site_settings} />
       <CartOverlay />
       
