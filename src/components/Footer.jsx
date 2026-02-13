@@ -3,9 +3,9 @@ import EditableText from './EditableText';
 
 export default function Footer({ data, profile, socials }) {
   // Gebruik data prop indien aanwezig, anders fallback naar individuele props
-  const siteSettings = data?.site_settings?.[0] || data?.site_settings || {};
+  const settings = data?.site_settings?.[0] || data?.site_settings || {};
   const contactInfo = data?.contact?.[0] || profile || {};
-  
+
   const naam = settings.site_name || profile?.full_name || 'Karel Decherf';
   const email = contactInfo.email || settings.email || '';
   const locatie = contactInfo.locatie || contactInfo.location || '';
